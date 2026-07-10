@@ -4,8 +4,8 @@ import ListForm from "./components/ListForm";
 import ListGroup from "./components/ListGroup";
 import { useEffect, useState } from "react";
 
-const BACKEND = import.meta.env.VITE_BACKEND_URL || "http://192.168.1.178:3000";
-
+//const BACKEND = import.meta.env.VITE_BACKEND_URL || "http://192.168.1.178:3000";
+const BACKEND = "";
 type ListItem = {
   id: string;
   item: string;
@@ -21,7 +21,6 @@ const isList = (value: unknown): value is ListItem[] =>
   Array.isArray(value) && value.every(isListItem);
 
 const App = () => {
-  console.log(BACKEND);
   const [list, setList] = useState<ListItem[]>([]);
   const [item, setItem] = useState<ListItem | null>();
   useEffect(() => {
